@@ -7,8 +7,9 @@ public class ConnectMongoDB
     IMongoCollection<Anime> collection;
     public ConnectMongoDB()
     {
-        var client = new MongoClient("mongodb+srv://Teste:Salve2022@anime.mho5n.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
-        var datanase = client.GetDatabase("Animes");
+        var ConnectionString = "";
+        var client = new MongoClient(ConnectionString);
+        var database = client.GetDatabase("Animes");
         collection = datanase.GetCollection<Anime>("_animes");
     }
 
